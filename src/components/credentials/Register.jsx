@@ -17,18 +17,15 @@ const Register = ({ onRegister }) => {
   };
 
   return (
-    <form
-      onSubmit={handleRegister}
-      className="w-full max-w-sm bg-white p-6 rounded shadow-md"
-    >
-      <h2 className="text-xl font-semibold mb-4 text-center">Registrarse</h2>
+    <form onSubmit={handleRegister} className="space-y-4">
+      <h2 className="text-xl font-semibold text-center text-gray-800">Registrarse</h2>
       <input
         type="email"
         placeholder="Correo"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
-        className="mb-3 w-full border rounded px-3 py-2"
+        className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <input
         type="password"
@@ -36,11 +33,11 @@ const Register = ({ onRegister }) => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
-        className="mb-4 w-full border rounded px-3 py-2"
+        className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <button
         type="submit"
-        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
       >
         Crear cuenta
       </button>
