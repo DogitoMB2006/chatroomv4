@@ -17,30 +17,33 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <form onSubmit={handleLogin} className="space-y-4">
-      <h2 className="text-xl font-semibold text-center text-gray-800">
-        Iniciar Sesión
-      </h2>
-      <input
-        type="email"
-        placeholder="Correo"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-        className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-      <input
-        type="password"
-        placeholder="Contraseña"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-        className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-      <button
-        type="submit"
-        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors"
-      >
+    <form onSubmit={handleLogin} className="space-y-6">
+      {/* Se quitó el segundo "Iniciar Sesión" */}
+      <label className="input input-bordered flex items-center gap-2 bg-gray-800 text-white">
+        <i className="ri-user-line"></i>
+        <input
+          type="email"
+          placeholder="Correo electrónico"
+          className="grow bg-transparent"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </label>
+
+      <label className="input input-bordered flex items-center gap-2 bg-gray-800 text-white">
+        <i className="ri-lock-password-line"></i>
+        <input
+          type="password"
+          placeholder="Contraseña"
+          className="grow bg-transparent"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </label>
+
+      <button type="submit" className="btn btn-primary w-full">
         Entrar
       </button>
     </form>
